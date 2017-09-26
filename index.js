@@ -25,7 +25,6 @@ export default function (configuration, authHeader, apiEndpoint, method, url, pa
           err.response.data &&
           typeof err.response.data === 'object'
       ) { exception = err.response.data; }
-      bus.$emit('serviceError', exception);
       return Promise.reject(exception);
     });
 }
